@@ -27,7 +27,7 @@ This project is for learning and local lab testing. It is not for a production m
 The project repository contains these folders:
 
 ```text
-project-root/
+open5gs-core-manager/
 |-- README.md
 |-- Dockerfile.open5gs       Builds the Open5GS image
 |-- Dockerfile.webui         Builds the original Open5GS WebUI image
@@ -49,7 +49,7 @@ The official Open5GS source is separate from this repository:
 
 Do not add `~/open5gs` to this project repository. Clone it from the official Open5GS repository when you set up the project.
 
-## Linux Setup from Scratch
+## Env Setup
 
 This guide is for Ubuntu Linux. The backend and frontend source code are already included in this repository. You do not need to repeat the UI and backend coding steps from the development phases.
 
@@ -101,11 +101,11 @@ npm --version
 Open the main folder of this project. Then save its path in a variable:
 
 ```bash
-cd /path/to/project-root
+cd /path/to/open5gs-core-manager
 export PROJECT_ROOT="$PWD"
 ```
 
-Replace `/path/to/project-root` with the real project path.
+Replace `/path/to/open5gs-core-manager` with the real project path.
 
 ### 5. Create the Docker Network and Start MongoDB
 
@@ -409,7 +409,3 @@ ogs-webui
 ```
 
 Keep these names unless you also update the backend configuration.
-
-## Security Note
-
-The manager backend mounts `/var/run/docker.sock`. This allows it to control Docker containers. Use the manager only in a trusted local environment.
