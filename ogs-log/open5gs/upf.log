@@ -1,0 +1,43 @@
+Open5GS daemon v2.8.0
+
+09/14 16:35:07.417: [app] INFO: Configuration: '/open5gs/install/etc/open5gs/upf.yaml' (../lib/app/ogs-init.c:144)
+09/14 16:35:07.417: [app] INFO: File Logging: '/open5gs/install/var/log/open5gs/upf.log' (../lib/app/ogs-init.c:147)
+09/14 16:35:07.460: [metrics] INFO: metrics_server() [http://127.0.0.7]:9090 (../lib/metrics/prometheus/context.c:392)
+09/14 16:35:07.460: [pfcp] INFO: pfcp_server() [127.0.0.7]:8805 (../lib/pfcp/path.c:30)
+09/14 16:35:07.460: [gtp] INFO: gtp_server() [127.0.0.7]:2152 (../lib/gtp/path.c:30)
+09/14 16:35:07.461: [app] INFO: UPF initialize...done (../src/upf/app.c:31)
+Open5GS daemon v2.8.0
+
+09/15 05:32:21.311: [app] INFO: Configuration: '/open5gs/install/etc/open5gs/upf.yaml' (../lib/app/ogs-init.c:144)
+09/15 05:32:21.311: [app] INFO: File Logging: '/open5gs/install/var/log/open5gs/upf.log' (../lib/app/ogs-init.c:147)
+09/15 05:32:21.376: [metrics] INFO: metrics_server() [http://127.0.0.7]:9090 (../lib/metrics/prometheus/context.c:392)
+09/15 05:32:21.376: [pfcp] INFO: pfcp_server() [127.0.0.7]:8805 (../lib/pfcp/path.c:30)
+09/15 05:32:21.376: [gtp] INFO: gtp_server() [127.0.0.7]:2152 (../lib/gtp/path.c:30)
+09/15 05:32:21.377: [app] INFO: UPF initialize...done (../src/upf/app.c:31)
+Open5GS daemon v2.8.0
+
+09/15 12:30:26.799: [app] INFO: Configuration: '/open5gs/install/etc/open5gs/upf.yaml' (../lib/app/ogs-init.c:144)
+09/15 12:30:26.799: [app] INFO: File Logging: '/open5gs/install/var/log/open5gs/upf.log' (../lib/app/ogs-init.c:147)
+09/15 12:30:26.855: [metrics] INFO: metrics_server() [http://127.0.0.7]:9090 (../lib/metrics/prometheus/context.c:392)
+09/15 12:30:26.855: [pfcp] INFO: pfcp_server() [127.0.0.7]:8805 (../lib/pfcp/path.c:30)
+09/15 12:30:26.855: [gtp] INFO: gtp_server() [127.0.0.7]:2152 (../lib/gtp/path.c:30)
+09/15 12:30:26.855: [app] INFO: UPF initialize...done (../src/upf/app.c:31)
+Open5GS daemon v2.8.0
+
+09/18 13:25:19.831: [app] INFO: Configuration: '/open5gs/install/etc/open5gs/upf.yaml' (../lib/app/ogs-init.c:144)
+09/18 13:25:19.831: [app] INFO: File Logging: '/open5gs/install/var/log/open5gs/upf.log' (../lib/app/ogs-init.c:147)
+09/18 13:25:19.887: [metrics] INFO: metrics_server() [http://127.0.0.7]:9090 (../lib/metrics/prometheus/context.c:392)
+09/18 13:25:19.887: [pfcp] INFO: pfcp_server() [127.0.0.7]:8805 (../lib/pfcp/path.c:30)
+09/18 13:25:19.887: [gtp] INFO: gtp_server() [127.0.0.7]:2152 (../lib/gtp/path.c:30)
+09/18 13:25:19.888: [app] INFO: UPF initialize...done (../src/upf/app.c:31)
+09/18 15:46:23.347: [app] INFO: SIGTERM received (../src/main.c:54)
+09/18 15:46:23.348: [app] INFO: Open5GS daemon terminating... (../src/main.c:231)
+09/18 15:46:23.408: [app] INFO: UPF terminate...done (../src/upf/app.c:39)
+Open5GS daemon v2.8.0
+
+09/18 15:48:20.292: [app] INFO: Configuration: '/open5gs/install/etc/open5gs/upf.yaml' (../lib/app/ogs-init.c:144)
+09/18 15:48:20.292: [app] INFO: File Logging: '/open5gs/install/var/log/open5gs/upf.log' (../lib/app/ogs-init.c:147)
+09/18 15:48:20.341: [metrics] INFO: metrics_server() [http://127.0.0.7]:9090 (../lib/metrics/prometheus/context.c:392)
+09/18 15:48:20.341: [pfcp] INFO: pfcp_server() [127.0.0.7]:8805 (../lib/pfcp/path.c:30)
+09/18 15:48:20.342: [gtp] INFO: gtp_server() [127.0.0.7]:2152 (../lib/gtp/path.c:30)
+09/18 15:48:20.343: [app] INFO: UPF initialize...done (../src/upf/app.c:31)

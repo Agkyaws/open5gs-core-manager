@@ -1,0 +1,54 @@
+Open5GS daemon v2.8.0
+
+09/14 16:34:26.582: [app] INFO: Configuration: '/open5gs/install/etc/open5gs/nrf.yaml' (../lib/app/ogs-init.c:144)
+09/14 16:34:26.582: [app] INFO: File Logging: '/open5gs/install/var/log/open5gs/nrf.log' (../lib/app/ogs-init.c:147)
+09/14 16:34:26.585: [sbi] INFO: NF Service [nnrf-nfm] (../lib/sbi/context.c:2012)
+09/14 16:34:26.585: [sbi] INFO: NF Service [nnrf-disc] (../lib/sbi/context.c:2012)
+09/14 16:34:26.585: [sbi] INFO: nghttp2_server() [http://127.0.0.10]:7777 (../lib/sbi/nghttp2-server.c:454)
+09/14 16:34:26.585: [app] INFO: NRF initialize...done (../src/nrf/app.c:31)
+Open5GS daemon v2.8.0
+
+09/15 05:32:29.252: [app] INFO: Configuration: '/open5gs/install/etc/open5gs/nrf.yaml' (../lib/app/ogs-init.c:144)
+09/15 05:32:29.252: [app] INFO: File Logging: '/open5gs/install/var/log/open5gs/nrf.log' (../lib/app/ogs-init.c:147)
+09/15 05:32:29.255: [sbi] INFO: NF Service [nnrf-nfm] (../lib/sbi/context.c:2012)
+09/15 05:32:29.255: [sbi] INFO: NF Service [nnrf-disc] (../lib/sbi/context.c:2012)
+09/15 05:32:29.255: [sbi] INFO: nghttp2_server() [http://127.0.0.10]:7777 (../lib/sbi/nghttp2-server.c:454)
+09/15 05:32:29.255: [app] INFO: NRF initialize...done (../src/nrf/app.c:31)
+09/15 07:55:26.968: [app] INFO: SIGTERM received (../src/main.c:54)
+09/15 07:55:26.968: [app] INFO: Open5GS daemon terminating... (../src/main.c:231)
+09/15 07:55:26.972: [app] INFO: NRF terminate...done (../src/nrf/app.c:39)
+Open5GS daemon v2.8.0
+
+09/15 07:55:29.101: [app] INFO: Configuration: '/open5gs/install/etc/open5gs/nrf.yaml' (../lib/app/ogs-init.c:144)
+09/15 07:55:29.101: [app] INFO: File Logging: '/open5gs/install/var/log/open5gs/nrf.log' (../lib/app/ogs-init.c:147)
+09/15 07:55:29.104: [sbi] INFO: NF Service [nnrf-nfm] (../lib/sbi/context.c:2012)
+09/15 07:55:29.104: [sbi] INFO: NF Service [nnrf-disc] (../lib/sbi/context.c:2012)
+09/15 07:55:29.105: [sbi] INFO: nghttp2_server() [http://127.0.0.10]:7777 (../lib/sbi/nghttp2-server.c:454)
+09/15 07:55:29.105: [app] INFO: NRF initialize...done (../src/nrf/app.c:31)
+Open5GS daemon v2.8.0
+
+09/15 12:30:23.431: [app] INFO: Configuration: '/open5gs/install/etc/open5gs/nrf.yaml' (../lib/app/ogs-init.c:144)
+09/15 12:30:23.431: [app] INFO: File Logging: '/open5gs/install/var/log/open5gs/nrf.log' (../lib/app/ogs-init.c:147)
+09/15 12:30:23.435: [sbi] INFO: NF Service [nnrf-nfm] (../lib/sbi/context.c:2012)
+09/15 12:30:23.435: [sbi] INFO: NF Service [nnrf-disc] (../lib/sbi/context.c:2012)
+09/15 12:30:23.436: [sbi] INFO: nghttp2_server() [http://127.0.0.10]:7777 (../lib/sbi/nghttp2-server.c:454)
+09/15 12:30:23.436: [app] INFO: NRF initialize...done (../src/nrf/app.c:31)
+Open5GS daemon v2.8.0
+
+09/18 13:25:16.607: [app] INFO: Configuration: '/open5gs/install/etc/open5gs/nrf.yaml' (../lib/app/ogs-init.c:144)
+09/18 13:25:16.607: [app] INFO: File Logging: '/open5gs/install/var/log/open5gs/nrf.log' (../lib/app/ogs-init.c:147)
+09/18 13:25:16.611: [sbi] INFO: NF Service [nnrf-nfm] (../lib/sbi/context.c:2012)
+09/18 13:25:16.611: [sbi] INFO: NF Service [nnrf-disc] (../lib/sbi/context.c:2012)
+09/18 13:25:16.611: [sbi] INFO: nghttp2_server() [http://127.0.0.10]:7777 (../lib/sbi/nghttp2-server.c:454)
+09/18 13:25:16.612: [app] INFO: NRF initialize...done (../src/nrf/app.c:31)
+09/18 15:46:20.197: [app] INFO: SIGTERM received (../src/main.c:54)
+09/18 15:46:20.198: [app] INFO: Open5GS daemon terminating... (../src/main.c:231)
+09/18 15:46:20.216: [app] INFO: NRF terminate...done (../src/nrf/app.c:39)
+Open5GS daemon v2.8.0
+
+09/18 15:48:15.963: [app] INFO: Configuration: '/open5gs/install/etc/open5gs/nrf.yaml' (../lib/app/ogs-init.c:144)
+09/18 15:48:15.963: [app] INFO: File Logging: '/open5gs/install/var/log/open5gs/nrf.log' (../lib/app/ogs-init.c:147)
+09/18 15:48:15.967: [sbi] INFO: NF Service [nnrf-nfm] (../lib/sbi/context.c:2012)
+09/18 15:48:15.967: [sbi] INFO: NF Service [nnrf-disc] (../lib/sbi/context.c:2012)
+09/18 15:48:15.967: [sbi] INFO: nghttp2_server() [http://127.0.0.10]:7777 (../lib/sbi/nghttp2-server.c:454)
+09/18 15:48:15.967: [app] INFO: NRF initialize...done (../src/nrf/app.c:31)
