@@ -1,0 +1,9 @@
+db_uri: mongodb://mongo-open5gs/open5gs
+
+server:
+  host: 0.0.0.0
+  port: 3000
+
+logger:
+  file: /open5gs/install/var/log/open5gs/webui.log
+  level: info

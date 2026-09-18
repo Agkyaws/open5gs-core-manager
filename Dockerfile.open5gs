@@ -1,0 +1,26 @@
+FROM ubuntu:22.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && apt-get install -y \
+    git build-essential meson ninja-build flex bison \
+    libsctp-dev libgnutls28-dev libgcrypt-dev libssl-dev libidn11-dev \
+    libmongoc-dev libbson-dev libyaml-dev libmicrohttpd-dev libcurl4-gnutls-dev \
+    libtins-dev libpcap-dev \
+    libtalloc-dev cmake \
+    libnghttp2-dev \
+    iproute2 iptables iputils-ping tcpdump \
+    pkg-config \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /open5gs
+COPY . /open5gs
+
+RUN meson build --prefix=/open5gs/install && \
+    ninja -C build && \
+    ninja -C build install
+
+ENV PATH="/open5gs/install/bin:${PATH}"
+ENV LD_LIBRARY_PATH="/open5gs/install/lib:${LD_LIBRARY_PATH}"
+
+WORKDIR /open5gs/install

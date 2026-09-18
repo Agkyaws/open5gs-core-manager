@@ -1,0 +1,32 @@
+# Upstream source repositories
+/open5gs/
+
+# Runtime data
+/ogs-log/
+*.log
+nohup.out
+
+# Python
+**/__pycache__/
+*.py[cod]
+**/venv/
+**/.venv/
+
+# Node.js and React
+**/node_modules/
+ogs-manager/frontend/build/
+
+# Local settings
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Editor and operating system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
