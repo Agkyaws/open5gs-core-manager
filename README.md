@@ -4,6 +4,9 @@ This project runs an Open5GS 5G Core with Docker. It also provides a web dashboa
 
 This project is for learning and local lab testing. It is not for a production mobile network.
 
+<img width="1902" height="665" alt="image" src="https://github.com/user-attachments/assets/10b08c99-d3f0-48b0-9342-5804764d6d1f" />
+
+
 ## Main Features
 
 - View MongoDB and Open5GS Network Function status.
