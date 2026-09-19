@@ -10,7 +10,7 @@ function App() {
   const [logs, setLogs] = useState("");
   const [loading, setLoading] = useState(false);
   const [activeTab, setActiveTab] = useState("dashboard");
-  const [theme, setTheme] = useState("light"); // light / dark
+  const [theme, setTheme] = useState("light");
   const [ueranStatus, setUeranStatus] = useState({
     gnb: { exists: false, running: false, status: "not_created" },
     ue: { exists: false, running: false, status: "not_created" },
@@ -37,7 +37,6 @@ function App() {
       const res = await axios.get(`${API_BASE}/ueransim/status`);
       setUeranStatus(res.data);
     } catch (e) {
-      // error ဖြစ်ရင် default error state
       setUeranStatus({
         gnb: { exists: false, running: false, status: "error" },
         ue: { exists: false, running: false, status: "error" },
@@ -94,7 +93,6 @@ function App() {
     (nf) => nf.name === "ogs-webui" && nf.running
   );
 
-  // Theme styles
   const isDark = theme === "dark";
   const bgColor = isDark ? "#0f172a" : "#f3f4f6";
   const cardBg = isDark ? "#1f2937" : "#ffffff";
@@ -113,7 +111,6 @@ function App() {
           "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
       }}
     >
-      {/* Header */}
       <header
         style={{
           padding: "16px 24px",
@@ -160,7 +157,6 @@ function App() {
           </p>
         </div>
 
-        {/* Theme toggle */}
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
           <span style={{ fontSize: 12, color: subTextColor }}>Theme:</span>
           <button
@@ -185,9 +181,7 @@ function App() {
         </div>
       </header>
 
-      {/* Main content */}
       <main style={{ padding: "16px 24px" }}>
-        {/* Tabs */}
         <nav
           style={{
             display: "flex",
@@ -224,7 +218,6 @@ function App() {
           ))}
         </nav>
 
-        {/* Loading indicator */}
         {loading && (
           <div
             style={{
@@ -237,10 +230,8 @@ function App() {
           </div>
         )}
 
-        {/* Dashboard tab */}
         {activeTab === "dashboard" && (
           <div style={{ display: "grid", gap: 16 }}>
-            {/* Top cards */}
             <div
               style={{
                 display: "grid",
@@ -279,7 +270,6 @@ function App() {
               />
             </div>
 
-            {/* Dashboard lower section: topology + compact table */}
             <div
               style={{
                 display: "grid",
@@ -309,7 +299,6 @@ function App() {
           </div>
         )}
 
-        {/* Topology tab (Open5GS-style) */}
         {activeTab === "topology" && (
           <TopologyPage
             dbStatus={dbStatus}
@@ -324,7 +313,6 @@ function App() {
           />
         )}
 
-        {/* Core NFs tab */}
         {activeTab === "core" && (
           <CoreNFPage
             nfs={nfs}
@@ -340,7 +328,6 @@ function App() {
           />
         )}
 
-        {/* Subscribers tab */}
         {activeTab === "subscribers" && (
           <SubscribersPage
             bg={cardBg}
@@ -350,7 +337,6 @@ function App() {
           />
         )}
 
-        {/* UE/RAN Config tab */}
         {activeTab === "ueran" && (
           <UERANConfigPage
             bg={cardBg}
@@ -360,7 +346,6 @@ function App() {
           />
         )}
 
-        {/* Unified Logs tab */}
         {activeTab === "logs" && (
           <UnifiedLogsPage
             nfs={nfs}
@@ -378,7 +363,6 @@ function App() {
   );
 }
 
-// ---------- Topology helper ----------
 
 function getTopologyStatus(nfs, dbStatus) {
   const byName = Object.fromEntries(nfs.map((nf) => [nf.name, nf]));
@@ -410,7 +394,6 @@ function getTopologyStatus(nfs, dbStatus) {
   };
 }
 
-// ---------- Dashboard cards ----------
 
 function StatusCard({ title, value, color, bg, subTextColor }) {
   return (
@@ -613,7 +596,6 @@ function CompactNFTableCard({
   );
 }
 
-// ---------- Topology page (Open5GS-style) ----------
 
 function TopologyPage({
   dbStatus,
@@ -649,7 +631,6 @@ function TopologyPage({
         PCF, NSSF, AMF, SMF, UPF, MongoDB, WebUI).
       </p>
 
-      {/* Control plane */}
       <div
         style={{
           marginTop: 10,
@@ -668,7 +649,6 @@ function TopologyPage({
             gap: 12,
           }}
         >
-          {/* MongoDB → UDR (N8) */}
           <TopologyNode
             label="MongoDB"
             subLabel="mongo-open5gs"
@@ -691,7 +671,6 @@ function TopologyPage({
             N8 {topo.mongo_udr_ok ? "OK" : "FAIL"}
           </div>
 
-          {/* UDM / AUSF / PCF / NSSF */}
           <TopologyNode
             label="UDM"
             subLabel="ogs-udm"
@@ -718,7 +697,6 @@ function TopologyPage({
           />
         </div>
 
-        {/* NRF center */}
         <div style={{ marginTop: 12, textAlign: "center" }}>
           <TopologyNode
             label="NRF"
@@ -737,7 +715,6 @@ function TopologyPage({
           </div>
         </div>
 
-        {/* AMF / SMF (control plane) */}
         <div
           style={{
             marginTop: 12,
@@ -763,7 +740,6 @@ function TopologyPage({
         </div>
       </div>
 
-      {/* User plane */}
       <div
         style={{
           marginTop: 16,
@@ -800,7 +776,6 @@ function TopologyPage({
         </div>
       </div>
 
-      {/* WebUI / UE / Internet */}
       <div
         style={{
           marginTop: 16,
@@ -860,8 +835,6 @@ function TopologyPage({
   );
 }
 
-// ---------- Core NFs page / Logs / Subscribers / UE/RAN ----------
-// (unchanged from previous working version, just kept here)
 
 function CoreNFPage({
   nfs,
@@ -1261,7 +1234,6 @@ function SubscribersPage({
         gap: 16,
       }}
     >
-      {/* Form side */}
       <div
         style={{
           padding: 14,
@@ -1394,7 +1366,6 @@ function SubscribersPage({
         </form>
       </div>
 
-      {/* List side */}
       <div
         style={{
           padding: 14,
@@ -1777,7 +1748,6 @@ function UERANConfigPage({
   );
 }
 
-// ---------- Small components ----------
 
 function TopologyNode({ label, subLabel, status, color }) {
   return (

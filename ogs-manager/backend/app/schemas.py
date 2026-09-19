@@ -1,7 +1,5 @@
 from pydantic import BaseModel
 
-# ---------- NF Status / Actions / Health ----------
-
 class NFStatus(BaseModel):
     name: str
     status: str
@@ -21,8 +19,6 @@ class MongoHealth(BaseModel):
     error: str | None = None
 
 
-# ---------- Subscriber schema (Phase 3) ----------
-
 class Subscriber(BaseModel):
     id: str | None = None
     imsi: str
@@ -33,8 +29,6 @@ class Subscriber(BaseModel):
     sst: int = 1
     sd: str | None = None
 
-
-# ---------- UE/RAN Config schema (for UERANSIM) ----------
 
 class UERANConfig(BaseModel):
     id: str | None = None

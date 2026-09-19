@@ -10,18 +10,16 @@ def _get_client():
 def check_mongo():
     try:
         client = _get_client()
-        client.server_info()  # will raise if cannot connect
+        client.server_info()
         client.close()
         return True
     except Exception as e:
         return False, str(e)
 
 
-# ---------- Subscriber CRUD ----------
-
 def list_subscribers():
     client = _get_client()
-    db = client.get_default_database()  # "open5gs" from URI [1][2]
+    db = client.get_default_database()
     col = db.get_collection("subscribers")
     docs = list(col.find())
     client.close()
@@ -66,12 +64,7 @@ def delete_subscriber(sub_id: str):
     return res.deleted_count
 
 
-# ---------- UE/RAN Config CRUD ----------
-
 def get_ueran_config():
-    """
-    Read single UE/RAN config document from open5gs.ueran_config.
-    """
     client = _get_client()
     db = client.get_default_database()
     col = db.get_collection("ueran_config")
@@ -92,9 +85,6 @@ def get_ueran_config():
 
 
 def upsert_ueran_config(data: dict):
-    """
-    Insert/update single UE/RAN config document (upsert).
-    """
     client = _get_client()
     db = client.get_default_database()
     col = db.get_collection("ueran_config")

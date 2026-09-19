@@ -34,13 +34,12 @@ app = FastAPI(
     version="1.0.0",
 )
 
-# CORS (frontend localhost:3000 + 8081) [2][3]
 origins = [
     "http://localhost:8081",
     "http://127.0.0.1:8081",
     "http://localhost:3000",
     "http://127.0.0.1:3000",
-    "*",  # dev only; tighten in prod
+    "*",
 ]
 app.add_middleware(
     CORSMiddleware,
@@ -51,8 +50,6 @@ app.add_middleware(
 )
 
 
-# ---------- Health ----------
-
 @app.get("/health/db", response_model=MongoHealth, tags=["Health"])
 def health_db():
     ok = check_mongo()
@@ -62,8 +59,6 @@ def health_db():
         status, err = ok
         return MongoHealth(status="FAIL", error=err)
 
-
-# ---------- NF Management (Phase 2) [2] ----------
 
 @app.get("/nf", response_model=list[NFStatus], tags=["NF"])
 def get_nf_list():
@@ -105,8 +100,6 @@ def nf_logs(
         raise HTTPException(status_code=500, detail=str(e))
 
 
-# ---------- Subscribers API (Phase 3) [3] ----------
-
 @app.get("/subscribers", response_model=list[Subscriber], tags=["Subscribers"])
 def get_subscribers():
     try:
@@ -139,8 +132,6 @@ def delete_sub(sub_id: str):
         raise HTTPException(status_code=500, detail=str(e))
 
 
-# ---------- UE/RAN Config API ----------
-
 @app.get("/ueran/config", response_model=UERANConfig | None, tags=["UE/RAN"])
 def read_ueran_config():
     try:
@@ -161,13 +152,8 @@ def write_ueran_config(cfg: UERANConfig):
         raise HTTPException(status_code=500, detail=str(e))
 
 
-# ---------- UERANSIM Integration API ----------
-
 @app.post("/ueransim/config/generate", tags=["UERANSIM"])
 def ueransim_generate_configs():
-    """
-    Generate gNB and UE YAML configs based on UE/RAN config + subscribers.
-    """
     try:
         gnb_path = generate_gnb_config()
         ue_path = generate_ue_config()
@@ -178,9 +164,6 @@ def ueransim_generate_configs():
 
 @app.post("/ueransim/gnb/{action}", tags=["UERANSIM"])
 def ueransim_gnb_action(action: str):
-    """
-    Start/stop/restart gNB container (ueransim-gnb).
-    """
     if action not in ("start", "stop", "restart"):
         raise HTTPException(status_code=400, detail="Invalid action")
     try:
@@ -194,9 +177,6 @@ def ueransim_gnb_action(action: str):
 
 @app.post("/ueransim/ue/{action}", tags=["UERANSIM"])
 def ueransim_ue_action(action: str):
-    """
-    Start/stop/restart UE container (ueransim-ue).
-    """
     if action not in ("start", "stop", "restart"):
         raise HTTPException(status_code=400, detail="Invalid action")
     try:
@@ -210,10 +190,6 @@ def ueransim_ue_action(action: str):
 
 @app.get("/ueransim/logs/{role}", tags=["UERANSIM"])
 def ueransim_logs(role: str, tail: int = 200):
-    """
-    Get logs for gNB or UE.
-    role: 'gnb' or 'ue'
-    """
     name = "ueransim-gnb" if role == "gnb" else "ueransim-ue"
     try:
         logs = get_logs(name, tail=tail)
@@ -224,9 +200,6 @@ def ueransim_logs(role: str, tail: int = 200):
 
 @app.get("/ueransim/status", tags=["UERANSIM"])
 def ueransim_status():
-    """
-    Get UERANSIM gNB/UE container status.
-    """
     try:
         status = get_ueransim_status()
         return status
